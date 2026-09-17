@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.pnpm-store/
+*.tsbuildinfo
+
+.env*
+!.env.example
+
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.DS_Store
+Thumbs.db

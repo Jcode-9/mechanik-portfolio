@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --font-apex: Arial, Helvetica, sans-serif; --font-apex-display: 'Arial Narrow', Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 6rem; background: #050505; }
+section[id] { scroll-margin-top: 6rem; }
+body { margin: 0; overflow-x: hidden; background: #050505; color: #f5f5f5; font-family: var(--font-apex); }
+::selection { background: #ff3b18; color: white; }
+a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, a { transition-timing-function: cubic-bezier(.22,1,.36,1); }
+.section-pad { padding-block: clamp(5.5rem, 11vw, 10rem); overflow-x: hidden; }
+.technical-grid { background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(90deg, rgba(0,0,0,.8), transparent 80%); }
+.service-dialog-panel { background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px); background-size: 72px 72px; }
+.status-dot { width: 6px; height: 6px; display: inline-block; border-radius: 999px; background: #ff3b18; box-shadow: 0 0 12px #ff3b18; }
+.service-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 20%, rgba(255,59,24,.14), transparent 32%); opacity: 0; transition: opacity .35s ease; }
+.service-card:hover::before { opacity: 1; }
+.service-card::after { content: ''; position: absolute; left: 0; top: 0; height: 2px; width: 0; background: #ff3b18; transition: width .35s ease; }
+.service-card:hover::after { width: 100%; }
+.projects-scroller { scrollbar-width: thin; scrollbar-color: rgba(255,59,24,.7) transparent; }
+.project-card { isolation: isolate; }
+.project-card::after { content: ''; position: absolute; inset: 12% -25% -25% 10%; z-index: -1; border-radius: 50%; filter: blur(35px); opacity: .6; }
+.project-red { background: linear-gradient(145deg, #43140e, #101010 60%); }
+.project-red::after { background: #ff3b18; }
+.project-silver { background: linear-gradient(145deg, #454545, #111 60%); }
+.project-silver::after { background: #a9b2b8; }
+.project-amber { background: linear-gradient(145deg, #493214, #111 60%); }
+.project-amber::after { background: #ff9e3d; }
+.project-blue { background: linear-gradient(145deg, #182d3d, #101010 60%); }
+.project-blue::after { background: #2586bb; }
+.map-placeholder { background-color: #0b0b0b; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 36px 36px; }
+.field-label { display: flex; flex-direction: column; gap: .55rem; color: rgba(255,255,255,.55); font-size: .68rem; font-weight: 700; line-height: 1; text-transform: uppercase; letter-spacing: .16em; }
+.field-label input, .field-label select, .field-label textarea { width: 100%; border: 1px solid rgba(255,255,255,.14); border-radius: .15rem; background: #0b0b0b; color: #f5f5f5; padding: .95rem 1rem; font-family: inherit; font-size: .8rem; font-weight: 400; line-height: 1.25; letter-spacing: normal; outline: none; transition: border-color .25s ease, background .25s ease; }
+.field-label select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, #ff3b18 50%), linear-gradient(135deg, #ff3b18 50%, transparent 50%); background-position: calc(100% - 17px) 18px, calc(100% - 12px) 18px; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; }
+.field-label textarea { resize: vertical; min-height: 110px; }
+.field-label input::placeholder, .field-label textarea::placeholder { color: rgba(255,255,255,.25); }
+.field-label input:focus, .field-label select:focus, .field-label textarea:focus { border-color: #ff3b18; background: #111; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
